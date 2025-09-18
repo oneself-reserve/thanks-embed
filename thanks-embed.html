@@ -18,121 +18,121 @@
       --sub:#4B5563;        /* 補助文字色 */
       --bd:#E5E7EB;         /* 罫線 */
       --ok:#18B663;         /* 成功アイコン */
+      --shadow:0 10px 36px rgba(16,24,40,.08);
     }
-    html,body{height:100%;}
+    html,body{height:100%}
     body{
       margin:0;
       background:linear-gradient(180deg, rgba(11,92,171,.05), rgba(240,115,30,.05)), var(--bg);
-      font-family:'Hiragino Sans','Noto Sans JP','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      font-family:'Hiragino Sans','Noto Sans JP','Noto Sans JP','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
       color:var(--text);
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      line-break:strict;word-break:normal;-webkit-text-size-adjust:100%;text-underline-position:under;
     }
-    .wrap{min-height:100%;display:grid;place-items:center;padding:48px 16px;position:relative;z-index:1}
-    .card{width:min(980px,96%);background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 10px 36px rgba(16,24,40,.08);overflow:hidden}
-    .hero{position:relative;padding:28px 24px;border-bottom:1px solid var(--bd);background:radial-gradient(1200px 220px at 30% -20%, rgba(11,92,171,.10), transparent 70%), radial-gradient(900px 200px at 80% -30%, rgba(240,115,30,.10), transparent 70%),#fff}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:48px;height:48px;border-radius:12px;object-fit:cover}
-    .ttl{margin:0;font-size:22px;letter-spacing:.2px;position:relative}
-    .ttl::after{content:"";display:block;width:86px;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange));border-radius:999px;margin-top:8px;opacity:.9}
-    .sub{margin:4px 0 0;color:var(--sub);font-size:13px}
-
-    /* チェックマーク演出 */
-    .ok{position:absolute;right:24px;top:22px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:800;box-shadow:0 6px 20px rgba(11,92,171,.35);animation:pop .5s ease-out}
-    @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
-
-    .body{padding:22px}
-    .notice{display:flex;gap:12px;align-items:flex-start;background:#F9FBFF;border:1px solid var(--bd);border-radius:12px;padding:14px;margin:0 0 16px}
-    .dot{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
-    .msg{margin:0;font-size:14px;line-height:1.9}
-
-    .section{font-size:14px;margin:18px 0 10px;border-left:4px solid var(--blue);padding-left:10px}
-    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
-    .btn{display:inline-block;padding:11px 14px;border-radius:10px;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.2px}
-    .btn.primary{background:var(--blue);color:#fff}
-
-    .cols{display:grid;gap:14px;margin:16px 0 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:780px){.cols{grid-template-columns:1fr}}
-    .box{border:1px solid var(--bd);border-radius:12px;padding:14px;background:#fff}
-    .box h3{margin:0 0 6px;font-size:14px}
-    .list{margin:6px 0 0 18px;padding:0;line-height:1.9}
-
-    .trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:6px 0 10px}
-    @media (max-width:780px){.trust{grid-template-columns:1fr}}
-    .pill{background:#FBFCFF;border:1px solid var(--bd);border-radius:999px;padding:10px 12px;font-size:13px;color:var(--sub)}
-    .pill b{color:var(--text)}
-
-    .footer{margin-top:8px;color:var(--sub);font-size:12px}
-    .footer a{color:var(--blue);text-decoration:none}
-      /* button accents */
-    .btn{transition:transform .12s ease, box-shadow .12s ease}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,92,171,.12)}
-    .btn.primary{box-shadow:0 6px 16px rgba(11,92,171,.18)}
-    .btn.primary:hover{box-shadow:0 10px 24px rgba(11,92,171,.24)}
-    .btn.home{border-color:var(--orange);color:var(--orange)}
-    .btn.home:hover{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(240,115,30,.18)}
-    /* vector art & pop accents */
-    .hero{overflow:hidden}
-    .hero .brand,.hero .ok{position:relative;z-index:2}
-    .hero-art{position:absolute;right:-18px;top:-10px;width:260px;height:auto;z-index:1;animation:float 6s ease-in-out infinite alternate}
-    @keyframes float{0%{transform:translateY(0)}100%{transform:translateY(8px)}}
-    .pop{background:linear-gradient(180deg,transparent 60%, rgba(240,115,30,.18) 0);padding:0 2px;border-radius:3px}
-
-    /* vector art & pop accents (exercise vibe) */
-    .hero{overflow:hidden}
-    .hero .brand,.hero .ok{position:relative;z-index:2}
-    .hero-art{position:absolute;right:-14px;top:-18px;width:300px;height:auto;z-index:1;animation:float 6s ease-in-out infinite alternate}
+    .wrap{min-height:100%;display:grid;place-items:center;padding:56px 16px;position:relative;z-index:1}
+    .card{
+      width:min(960px,96%);
+      background:var(--card);
+      border:1px solid var(--bd);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    /* 上にのる飾りはクリック無効化（重要） */
+    .page-art{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.75}
+    .card::before{content:"";position:absolute;inset:-1px;border-radius:21px;padding:1px;background:linear-gradient(135deg, rgba(11,92,171,.35), rgba(240,115,30,.35));
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .hero{position:relative;padding:28px 24px 24px;border-bottom:1px solid var(--bd);background:radial-gradient(1200px 220px at 30% -20%, rgba(11,92,171,.10), transparent 70%), radial-gradient(900px 200px at 80% -30%, rgba(240,115,30,.10), transparent 70%),#fff}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:52px;height:52px;border-radius:12px;object-fit:cover}
+    .ttl{margin:0;font-size:24px;letter-spacing:.2px;position:relative}
+    .ttl::after{content:"";display:block;width:96px;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange));border-radius:999px;margin-top:10px;opacity:.9}
+    .sub{margin:6px 0 0;color:var(--sub);font-size:14px;line-height:1.9}
+    .hero-art{position:absolute;right:-14px;top:-18px;width:300px;height:auto;z-index:1;animation:float 6s ease-in-out infinite alternate;pointer-events:none}
     @keyframes float{0%{transform:translateY(0)}100%{transform:translateY(8px)}}
     .hero-art .pulse{transform-origin:center;animation:pulse 2.6s ease-in-out infinite}
     @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
     .hero-art .dash{stroke-dasharray:12 14;animation:dash 1.8s linear infinite}
     @keyframes dash{to{stroke-dashoffset:-26}}
-    .pop{background:linear-gradient(180deg,transparent 60%, rgba(240,115,30,.18) 0);padding:0 2px;border-radius:3px}
 
-    /* Japanese readability */
-    body{line-break:strict;word-break:normal;-webkit-text-size-adjust:100%;text-underline-position:under}
-    p, li{line-height:1.95;letter-spacing:.01em}
-    .sub,.msg,.trusttxt{line-height:1.95}
-    .ttl,.section,.trustttl{text-wrap:balance}
+    .body{padding:26px 24px 24px; position:relative; z-index:5}
+    .notice{display:flex;gap:12px;align-items:flex-start;background:#F9FBFF;border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin:0 0 18px}
+    .dot{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
+    .msg{margin:0;font-size:14px;line-height:1.95}
 
-    /* page-wide vector art (exercise vibe) */
-    .page-art{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.66}
-    .page-art .move1{animation:pan 26s ease-in-out infinite alternate}
-    .page-art .move2{animation:pan 32s ease-in-out infinite alternate-reverse}
-    @keyframes pan{from{transform:translateX(-12px)}to{transform:translateX(12px)}}
-    /* pop spread across the page */
-    .page-art{opacity:.75}
-    .page-art .move1{animation:pan 28s ease-in-out infinite alternate}
-    .page-art .move2{animation:pan 26s ease-in-out infinite alternate-reverse}
-    .page-art .move3{animation:pan 30s ease-in-out infinite alternate}
-
-    /* card with subtle gradient border for pop */
-    .card{position:relative}
-    .card::before{content:"";position:absolute;inset:-1px;border-radius:19px;padding:1px;background:linear-gradient(135deg, rgba(11,92,171,.35), rgba(240,115,30,.35));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}
-
-    /* section sticker accents */
-    .section{position:relative}
-    .section::before{content:"★";position:absolute;left:-26px;top:-2px;font-size:14px;color:var(--orange);opacity:.75;transform:rotate(-10deg)}
-
-    /* CTA pop */
-    .btn{transition:transform .12s ease, box-shadow .12s ease, background .12s ease}
-    .btn.primary{background:linear-gradient(90deg, var(--blue), #2F7FD6);}
-    .btn.primary:hover{transform:translateY(-2px);}
+    .section{font-size:15px;margin:22px 0 12px;border-left:4px solid var(--blue);padding-left:10px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.2px;transition:transform .12s ease, box-shadow .12s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,92,171,.12)}
+    .btn.primary{background:linear-gradient(90deg, var(--blue), #2F7FD6);color:#fff;box-shadow:0 6px 16px rgba(11,92,171,.18)}
+    .btn.primary:hover{box-shadow:0 10px 24px rgba(11,92,171,.24)}
     .btn.home{border-color:var(--orange);color:#fff;background:linear-gradient(90deg, #FFA86B, var(--orange))}
 
-    /* trust cards: subtle pattern */
-    .trustcard{background:linear-gradient(0deg, #fff, #fff), radial-gradient(16px 16px at 12px 10px, rgba(11,92,171,.06), transparent 60%);background-clip:padding-box, border-box}
+    .cols{display:grid;gap:16px;margin:18px 0 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:780px){.cols{grid-template-columns:1fr}}
+    .box{border:1px solid var(--bd);border-radius:14px;padding:16px;background:#fff}
+    .box h3{margin:0 0 6px;font-size:15px}
+    .list{margin:6px 0 0 18px;padding:0;line-height:1.9}
 
-    /* prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce){
-      .hero-art,.page-art .move1,.page-art .move2,.page-art .move3{animation:none}
-    }
+    /* 特長3 */
+    .trust3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 12px}
+    @media (max-width:780px){.trust3{grid-template-columns:1fr}}
+    .trustcard{display:flex;gap:12px;border:1px solid var(--bd);border-radius:14px;background:#FBFCFF;padding:14px}
+    .trusticon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#EEF5FF;font-size:18px;flex:0 0 auto}
+    .trustttl{margin:0 0 4px;font-size:14px;color:var(--text)}
+    .trusttxt{margin:0;color:var(--sub);font-size:13px;line-height:1.9}
 
-    /* Japanese readability tweaks */
-    p, li{line-height:1.98}
-</style>
+    /* flow */
+    .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 6px;padding:0;list-style:none}
+    @media (max-width:980px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (max-width:640px){.flow{grid-template-columns:1fr}}
+    .flow li{position:relative;border:1px solid var(--bd);background:#fff;border-radius:12px;padding:12px}
+    .flow li::after{content:"";position:absolute;left:12px;right:12px;top:0;height:3px;border-radius:3px;background:linear-gradient(90deg, var(--blue), var(--orange));opacity:.25}
+    .icon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:#EEF5FF;margin-bottom:6px}
+    .f-ttl{margin:0 0 4px;font-size:14px}
+    .f-ttl .t{color:var(--sub);font-weight:600}
+    .f-txt{margin:0;color:var(--sub);font-size:13px;line-height:1.9}
+    .flow-note{margin:2px 0 14px;color:var(--sub);font-size:12.5px}
+
+    /* callout */
+    .callout{margin:10px 0 18px;padding:14px 16px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(240,115,30,.08), transparent 60%);background-clip:padding-box, border-box;color:var(--text);font-size:13.5px;line-height:1.95}
+    .callout strong{color:var(--text)}
+
+    /* YouTube grid */
+    .yt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 16px}
+    @media (max-width:720px){.yt-grid{grid-template-columns:1fr}}
+    .yt-16x9{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#000}
+    .yt-16x9 iframe{position:absolute;inset:0;width:100%;height:100%}
+    .yt-cap{margin:4px 0 0;font-size:13px;color:var(--sub);line-height:1.85}
+    .yt-ttl{margin:6px 0 0;font-size:14px;font-weight:700;color:var(--text)}
+    .yt-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none}
+    .yt-tags li{padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
+    .yt-note{margin:-6px 0 10px;color:var(--sub);font-size:12.5px}
+
+    /* celebrate band */
+    .cele{margin:12px 0 0;display:flex;align-items:center;gap:10px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(11,92,171,.10), transparent 60%);background-clip:padding-box,border-box;border:1px solid var(--bd);border-radius:12px;padding:10px 12px}
+    .cele .spark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#EEF5FF}
+    .cele .cele-txt{font-size:13.5px}
+
+    /* checklist */
+    .todo{list-style:none;margin:10px 0 10px;padding:0;display:grid;gap:10px}
+    .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:10px;background:#fff}
+    .todo input[type=checkbox]{appearance:none;width:20px;height:20px;border:2px solid var(--blue);border-radius:6px;display:inline-grid;place-content:center;cursor:pointer}
+    .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:120ms transform ease-in-out;background:linear-gradient(90deg, var(--blue), #2F7FD6);border-radius:3px}
+    .todo input[type=checkbox]:checked::before{transform:scale(1)}
+    .todo .mini{margin-left:auto;font-size:12px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:6px 8px;border-radius:999px}
+
+    .todo-done{margin:6px 0 0;font-size:13px;color:var(--text);display:none}
+    .todo-done.show{display:block;animation:pop .4s ease}
+
+    /*アクセシブルなフォーカス可視化*/
+    a:focus-visible, button:focus-visible, input:focus-visible{outline:3px solid rgba(11,92,171,.6);outline-offset:2px;border-radius:6px}
+    @media (prefers-reduced-motion: reduce){.hero-art{animation:none}}
+  </style>
 </head>
 <body>
-  <!-- Page-wide vector background (light, brand colors) -->
+  <!-- 背景ベクター（クリック不可） -->
   <svg class="page-art" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="bgBlue" x1="0" y1="0" x2="1" y2="1">
@@ -143,50 +143,20 @@
         <stop offset="0%" stop-color="#FFA86B"/>
         <stop offset="100%" stop-color="#F0731E"/>
       </linearGradient>
-      <!-- subtle dotted pattern -->
       <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
         <circle cx="2" cy="2" r="2" fill="#0B5CAB" opacity=".06"/>
         <circle cx="18" cy="18" r="2" fill="#F0731E" opacity=".05"/>
       </pattern>
     </defs>
-
-    <!-- background dots -->
     <rect width="1440" height="900" fill="url(#dots)"/>
-
-    <!-- top-left track arcs (expanded) -->
-    <g class="move1" opacity=".10">
+    <g opacity=".10">
       <path d="M-220 120 C 120 -40, 560 -40, 900 120" fill="none" stroke="url(#bgBlue)" stroke-width="22" stroke-linecap="round"/>
       <path d="M-240 160 C 100 0, 560 0, 920 160" fill="none" stroke="url(#bgOrange)" stroke-width="12" stroke-linecap="round" opacity=".9"/>
     </g>
-
-    <!-- mid-left heart-beat line -->
-    <path class="move2" d="M80 500 h120 l24 -44 l22 60 l24 -28 h160" fill="none" stroke="#0B5CAB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".10"/>
-
-    <!-- bottom-right arcs (expanded) -->
-    <g class="move3" opacity=".10">
+    <path d="M80 500 h120 l24 -44 l22 60 l24 -28 h160" fill="none" stroke="#0B5CAB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".10"/>
+    <g opacity=".10">
       <path d="M280 720 C 740 540, 1120 540, 1580 720" fill="none" stroke="url(#bgOrange)" stroke-width="20" stroke-linecap="round"/>
       <path d="M320 760 C 780 580, 1160 580, 1600 760" fill="none" stroke="url(#bgBlue)" stroke-width="12" stroke-linecap="round" opacity=".9"/>
-    </g>
-
-    <!-- scattered fitness icons (subtle) -->
-    <g opacity=".10">
-      <!-- dumbbell -->
-      <g transform="translate(1220,220)">
-        <rect x="-14" y="-5" width="10" height="10" rx="2" fill="#0B5CAB"/>
-        <rect x="4" y="-5" width="10" height="10" rx="2" fill="#F0731E"/>
-        <rect x="-4" y="-3" width="8" height="6" rx="2" fill="#0B5CAB"/>
-      </g>
-      <!-- cone markers -->
-      <g transform="translate(320,200) rotate(-8)">
-        <path d="M0 0 l18 0 l-9 22 z" fill="#F0731E"/>
-        <path d="M40 -6 l18 0 l-9 22 z" fill="#0B5CAB" opacity=".85"/>
-      </g>
-      <!-- stopwatch -->
-      <g transform="translate(1060,560)">
-        <circle cx="0" cy="0" r="12" fill="#ffffff"/>
-        <path d="M0 -8 L0 -2" stroke="#0B5CAB" stroke-width="3" stroke-linecap="round"/>
-        <rect x="-3" y="-18" width="6" height="6" rx="1" fill="#F0731E"/>
-      </g>
     </g>
   </svg>
 
@@ -194,7 +164,6 @@
     <article class="card" role="region" aria-label="予約完了のご案内">
       <header class="hero">
         <div class="brand">
-          <!-- ▼ ロゴ：STUDIOのアセットURLに差し替えてください -->
           <img src="https://share.google/images/zQSD5DBDohXzDo3gq" alt="OneSelF" class="logo" onerror="this.style.display='none'">
           <div>
             <h1 id="page-title" class="ttl">ご予約ありがとうございます</h1>
@@ -202,8 +171,7 @@
           </div>
         </div>
         <div class="cele" role="status" aria-live="polite"><span class="spark">🎉</span><span class="cele-txt">カラダと向き合う素敵な時間をお楽しみください。</span></div>
-        
-        <!-- Vector art: brand-inspired pop illustration (no external assets) -->
+        <!-- ヒーロー装飾（クリック不可） -->
         <svg class="hero-art" viewBox="0 0 360 240" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
@@ -214,47 +182,17 @@
               <stop offset="0%" stop-color="#FFA86B"/>
               <stop offset="100%" stop-color="#F0731E"/>
             </linearGradient>
-            <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="6" result="b"/>
-              <feBlend in="SourceGraphic" in2="b" mode="normal"/>
-            </filter>
           </defs>
-          <!-- track arcs (movement cue) -->
           <path d="M28 180c40-40 110-40 150 0" stroke="url(#gBlue)" stroke-width="10" fill="none" opacity=".18" stroke-linecap="round"/>
           <path d="M40 196c52-44 132-44 184 0" stroke="url(#gOrange)" stroke-width="6" fill="none" opacity=".25" stroke-linecap="round"/>
-
-          <!-- rising sun energy -->
           <circle cx="318" cy="42" r="26" fill="url(#gOrange)" opacity=".85"/>
-
-          <!-- runner figure (minimal & dynamic) -->
           <g transform="translate(120,72)">
-            <!-- head -->
-            <circle class="pulse" cx="0" cy="0" r="8" fill="#fff" stroke="url(#gBlue)" stroke-width="3"/>
-            <!-- torso & trail -->
+            <circle cx="0" cy="0" r="8" fill="#fff" stroke="url(#gBlue)" stroke-width="3"/>
             <path d="M0 6 L12 22 L34 22" fill="none" stroke="url(#gOrange)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- arms -->
             <path d="M6 16 L-6 26" fill="none" stroke="#2F7FD6" stroke-width="5" stroke-linecap="round"/>
             <path d="M14 12 L26 6" fill="none" stroke="#2F7FD6" stroke-width="5" stroke-linecap="round"/>
-            <!-- legs -->
             <path d="M12 22 L6 40" fill="none" stroke="#0B5CAB" stroke-width="6" stroke-linecap="round"/>
             <path d="M24 22 L40 34" fill="none" stroke="#0B5CAB" stroke-width="6" stroke-linecap="round"/>
-          </g>
-
-          <!-- motion lines -->
-          <path class="dash" d="M84 118 h-28" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-          <path class="dash" d="M94 132 h-20" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
-
-          <!-- small dumbbell icon (motivation) -->
-          <g transform="translate(300,160)" opacity=".9">
-            <rect x="-12" y="-4" width="8" height="8" rx="2" fill="#fff"/>
-            <rect x="4" y="-4" width="8" height="8" rx="2" fill="#fff"/>
-            <rect x="-4" y="-2" width="8" height="4" rx="2" fill="#fff"/>
-          </g>
-
-          <!-- sparkles -->
-          <g fill="#fff" opacity=".9">
-            <path d="M240 92l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8z"/>
-            <path d="M156 52l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" opacity=".85"/>
           </g>
         </svg>
       </header>
@@ -270,9 +208,9 @@
 
         <h2 class="section">来店前チェック（任意）</h2>
         <ul class="todo" aria-label="来店までの確認リスト">
-          <li><label><input type="checkbox" class="td"> Googleマップで位置確認</label><a class="mini" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59" target="_blank" rel="noopener">開く</a></li>
-          <li><label><input type="checkbox" class="td"> 事前アンケートの回答</label><a class="mini" href="https://forms.gle/iko8PAXtw3XqJF299" target="_blank" rel="noopener">回答する</a></li>
-          <li><label><input type="checkbox" class="td"> 説明動画をみる</label><a class="mini" href="https://youtu.be/C4bKRnQmtmA" target="_blank" rel="noopener">見る</a></li>
+          <li><label><input type="checkbox" class="td"> Googleマップで位置確認</label><a class="mini" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59" rel="noopener">開く</a></li>
+          <li><label><input type="checkbox" class="td"> 事前アンケートの回答</label><a class="mini" href="https://forms.gle/iko8PAXtw3XqJF299" rel="noopener">回答する</a></li>
+          <li><label><input type="checkbox" class="td"> 説明動画をみる</label><a class="mini" href="https://youtu.be/C4bKRnQmtmA" rel="noopener">見る</a></li>
         </ul>
         <p class="todo-done" id="todoDone">準備ばっちり！当日お会いできるのを楽しみにしています。</p>
 
@@ -295,7 +233,6 @@
           </section>
         </div>
 
-        <!-- 信頼感を高める3ポイント（公式テキスト反映） -->
         <section class="trust3" aria-label="OneSelFの特長">
           <div class="trustcard">
             <div class="trusticon" aria-hidden="true">🧑‍⚕️</div>
@@ -314,22 +251,12 @@
           <div class="trustcard">
             <div class="trusticon" aria-hidden="true">🏡</div>
             <div class="trustbody">
-            <h3 class="trustttl">03 日常性</h3>
+              <h3 class="trustttl">03 日常性</h3>
               <p class="trusttxt">スポーツ医科学のメソッドを<strong>日常に無理なく</strong>取り入れられる形でご提供。ジムで終わらせず、ご家庭や職場でも続けやすいフィードバックとエクササイズ。</p>
             </div>
           </div>
         </section>
 
-        <style>
-          .trust3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:6px 0 10px}
-          @media (max-width:780px){.trust3{grid-template-columns:1fr}}
-          .trustcard{display:flex;gap:12px;border:1px solid var(--bd);border-radius:14px;background:#FBFCFF;padding:14px}
-          .trusticon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#EEF5FF;font-size:18px}
-          .trustttl{margin:0 0 4px;font-size:14px;color:var(--text)}
-          .trusttxt{margin:0;color:var(--sub);font-size:13px;line-height:1.85}
-        </style>
-
-        <!-- サービス内容を“ワクワク”伝えるセクション -->
         <h2 class="section">体験セッションの流れ（60分例）</h2>
         <ol class="flow" aria-label="60分の進行例">
           <li>
@@ -409,49 +336,6 @@
           </div>
         </div>
 
-        <style>
-          /* flow */
-          .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 6px;padding:0;list-style:none}
-          @media (max-width:980px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
-          @media (max-width:640px){.flow{grid-template-columns:1fr}}
-          .flow li{position:relative;border:1px solid var(--bd);background:#fff;border-radius:12px;padding:12px}
-          .flow li::after{content:"";position:absolute;left:12px;right:12px;top:0;height:3px;border-radius:3px;background:linear-gradient(90deg, var(--blue), var(--orange));opacity:.25}
-          .icon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:#EEF5FF;margin-bottom:6px}
-          .f-ttl{margin:0 0 4px;font-size:14px}
-          .f-ttl .t{color:var(--sub);font-weight:600}
-          .f-txt{margin:0;color:var(--sub);font-size:13px;line-height:1.9}
-          .flow-note{margin:2px 0 14px;color:var(--sub);font-size:12px}
-
-          /* callout */
-          .callout{margin:8px 0 16px;padding:12px 14px;border:1px solid var(--bd);border-radius:12px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(240,115,30,.08), transparent 60%);background-clip:padding-box, border-box;color:var(--text);font-size:13.5px;line-height:1.95}
-          .callout strong{color:var(--text)}
-          /* YouTube grid */
-          .yt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 16px}
-          @media (max-width:720px){.yt-grid{grid-template-columns:1fr}}
-          .yt-16x9{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#000}
-          .yt-16x9 iframe{position:absolute;inset:0;width:100%;height:100%}
-          .yt-cap{margin:4px 0 0;font-size:13px;color:var(--sub);line-height:1.85}
-          .yt-ttl{margin:6px 0 0;font-size:14px;font-weight:700;color:var(--text)}
-          .yt-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none}
-          .yt-tags li{padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
-          .yt-note{margin:-6px 0 10px;color:var(--sub);font-size:12.5px}
-          
-          /* celebrate band */
-          .cele{margin:12px 0 0;display:flex;align-items:center;gap:10px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(11,92,171,.10), transparent 60%);background-clip:padding-box,border-box;border:1px solid var(--bd);border-radius:12px;padding:10px 12px}
-          .cele .spark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#EEF5FF}
-          .cele .cele-txt{font-size:13.5px}
-
-          /* checklist */
-          .todo{list-style:none;margin:10px 0 10px;padding:0;display:grid;gap:10px}
-          .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:10px;background:#fff}
-          .todo input[type=checkbox]{appearance:none;width:20px;height:20px;border:2px solid var(--blue);border-radius:6px;display:inline-grid;place-content:center;cursor:pointer}
-          .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:120ms transform ease-in-out;background:linear-gradient(90deg, var(--blue), #2F7FD6);border-radius:3px}
-          .todo input[type=checkbox]:checked::before{transform:scale(1)}
-          .todo .mini{margin-left:auto;font-size:12px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:6px 8px;border-radius:999px}
-          .todo-done{margin:6px 0 0;font-size:13px;color:var(--text);display:none}
-          .todo-done.show{display:block;animation:pop .4s ease}
-        </style>
-
         <footer class="footer">
           <a href="mailto:one.self.for.your.life@gmail.com">お問い合わせ：one.self.for.your.life@gmail.com</a>
           <span>／</span>
@@ -474,6 +358,27 @@
     }
     boxes.forEach(function(b){ b.addEventListener('change', update); });
     update();
+  })();
+  </script>
+
+  <!-- 念のための強制オープン（クリック保証） -->
+  <script>
+  (function(){
+    function openSmart(url){
+      try{var w=window.open(url,'_blank','noopener');if(w&&!w.closed)return;}catch(_){}
+      try{window.top.location.assign(url);return;}catch(_){}
+      try{window.location.assign(url);return;}catch(_){}
+      try{var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';
+          document.body.appendChild(a);a.click();a.remove();}catch(_){}
+    }
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a');
+      if(!a) return;
+      var href=a.getAttribute('href')||'';
+      if(!/^https?:\/\//i.test(href)) return; // mailto/tel/# は素通し
+      e.preventDefault();
+      openSmart(href);
+    },{passive:false});
   })();
   </script>
 </body>

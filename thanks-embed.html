@@ -1,234 +1,205 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ご予約ありがとうございます｜OneSelF</title>
-  <meta name="description" content="OneSelF 三鷹の初回体験のご予約が完了しました。来店前に役立つ情報と次のアクションをご案内します。" />
-  <meta name="robots" content="noindex, nofollow">
-  <style>
-    :root{
-      --blue:#0B5CAB; --orange:#F0731E; --bg:#F7FAFF; --card:#ffffff;
-      --text:#111827; --sub:#4B5563; --bd:#E5E7EB; --ok:#18B663; --shadow:0 10px 36px rgba(16,24,40,.08);
-    }
-    html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg, rgba(11,92,171,.05), rgba(240,115,30,.05)), var(--bg);
-      font-family:'Hiragino Sans','Noto Sans JP','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-break:strict;word-break:normal;-webkit-text-size-adjust:100%;text-underline-position:under}
-    .wrap{min-height:100%;display:grid;place-items:center;padding:56px 16px;position:relative;z-index:1}
-    .card{width:min(960px,96%);background:var(--card);border:1px solid var(--bd);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;position:relative}
-    .page-art{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.75}
-    .card::before{content:"";position:absolute;inset:-1px;border-radius:21px;padding:1px;background:linear-gradient(135deg, rgba(11,92,171,.35), rgba(240,115,30,.35));
-      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-    .hero{position:relative;padding:28px 24px 24px;border-bottom:1px solid var(--bd);background:radial-gradient(1200px 220px at 30% -20%, rgba(11,92,171,.10), transparent 70%), radial-gradient(900px 200px at 80% -30%, rgba(240,115,30,.10), transparent 70%),#fff}
-    .brand{display:flex;align-items:center;gap:16px}
-    .logo{width:52px;height:52px;border-radius:12px;object-fit:cover}
-    .ttl{margin:0;font-size:24px;letter-spacing:.2px;position:relative}
-    .ttl::after{content:"";display:block;width:96px;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange));border-radius:999px;margin-top:10px;opacity:.9}
-    .sub{margin:6px 0 0;color:var(--sub);font-size:14px;line-height:1.9}
-    .hero-art{position:absolute;right:-14px;top:-18px;width:300px;height:auto;z-index:1;animation:float 6s ease-in-out infinite alternate;pointer-events:none}
-    @keyframes float{0%{transform:translateY(0)}100%{transform:translateY(8px)}}
-    .hero-art .dash{stroke-dasharray:12 14;animation:dash 1.8s linear infinite}
-    @keyframes dash{to{stroke-dashoffset:-26}}
-
-    .body{padding:26px 24px 24px; position:relative; z-index:5}
-    .notice{display:flex;gap:12px;align-items:flex-start;background:#F9FBFF;border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin:0 0 18px}
-    .dot{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
-    .msg{margin:0;font-size:14px;line-height:1.95}
-
-    .section{font-size:15px;margin:22px 0 12px;border-left:4px solid var(--blue);padding-left:10px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.2px;transition:transform .12s ease, box-shadow .12s ease}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,92,171,.12)}
-    .btn.primary{background:linear-gradient(90deg, var(--blue), #2F7FD6);color:#fff;box-shadow:0 6px 16px rgba(11,92,171,.18)}
-
-    .cols{display:grid;gap:16px;margin:18px 0 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:780px){.cols{grid-template-columns:1fr}}
-    .box{border:1px solid var(--bd);border-radius:14px;padding:16px;background:#fff}
-    .box h3{margin:0 0 6px;font-size:15px}
-    .list{margin:6px 0 0 18px;padding:0;line-height:1.9}
-
-    .trust3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 12px}
-    @media (max-width:780px){.trust3{grid-template-columns:1fr}}
-    .trustcard{display:flex;gap:12px;border:1px solid var(--bd);border-radius:14px;background:#FBFCFF;padding:14px}
-    .trusticon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#EEF5FF;font-size:18px;flex:0 0 auto}
-    .trustttl{margin:0 0 4px;font-size:14px;color:var(--text)}
-    .trusttxt{margin:0;color:var(--sub);font-size:13px;line-height:1.9}
-
-    .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 6px;padding:0;list-style:none}
-    @media (max-width:980px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media (max-width:640px){.flow{grid-template-columns:1fr}}
-    .flow li{position:relative;border:1px solid var(--bd);background:#fff;border-radius:12px;padding:12px}
-    .flow li::after{content:"";position:absolute;left:12px;right:12px;top:0;height:3px;border-radius:3px;background:linear-gradient(90deg, var(--blue), var(--orange));opacity:.25}
-    .icon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:#EEF5FF;margin-bottom:6px}
-    .f-ttl{margin:0 0 4px;font-size:14px}
-    .f-ttl .t{color:var(--sub);font-weight:600}
-    .f-txt{margin:0;color:var(--sub);font-size:13px;line-height:1.9}
-    .flow-note{margin:2px 0 14px;color:var(--sub);font-size:12.5px}
-
-    .callout{margin:10px 0 18px;padding:14px 16px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(240,115,30,.08), transparent 60%);background-clip:padding-box, border-box;color:var(--text);font-size:13.5px;line-height:1.95}
-    .yt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 16px}
-    @media (max-width:720px){.yt-grid{grid-template-columns:1fr}}
-    .yt-16x9{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#000}
-    .yt-16x9 iframe{position:absolute;inset:0;width:100%;height:100%}
-    .yt-cap{margin:4px 0 0;font-size:13px;color:var(--sub);line-height:1.85}
-    .yt-ttl{margin:6px 0 0;font-size:14px;font-weight:700;color:var(--text)}
-    .yt-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none}
-    .yt-tags li{padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
-    .yt-note{margin:-6px 0 10px;color:var(--sub);font-size:12.5px}
-
-    .cele{margin:12px 0 0;display:flex;align-items:center;gap:10px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 12px 10px, rgba(11,92,171,.10), transparent 60%);background-clip:padding-box,border-box;border:1px solid var(--bd);border-radius:12px;padding:10px 12px}
-    .cele .spark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#EEF5FF}
-    .cele .cele-txt{font-size:13.5px}
-
-    .todo{list-style:none;margin:10px 0 10px;padding:0;display:grid;gap:10px}
-    .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:10px;background:#fff}
-    .todo input[type=checkbox]{appearance:none;width:20px;height:20px;border:2px solid var(--blue);border-radius:6px;display:inline-grid;place-content:center;cursor:pointer}
-    .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:120ms transform ease-in-out;background:linear-gradient(90deg, var(--blue), #2F7FD6);border-radius:3px}
-    .todo input[type=checkbox]:checked::before{transform:scale(1)}
-    .todo .mini{margin-left:auto;font-size:12px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:6px 8px;border-radius:999px}
-
-    .todo-done{margin:6px 0 0;font-size:13px;color:var(--text);display:none}
-    .todo-done.show{display:block;animation:pop .4s ease}
-    a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(11,92,171,.6);outline-offset:2px;border-radius:6px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ご予約ありがとうございます｜OneSelF</title>
+<meta name="description" content="OneSelF 三鷹の初回体験のご予約が確定しました。来店前のミニガイドをご確認ください。">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --blue:#0B5CAB; --blue2:#2F7FD6; --orange:#F0731E;
+    --bg:#F7FAFF; --card:#fff; --text:#111827; --sub:#4B5563; --bd:#E5E7EB; --ok:#18B663;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:'Hiragino Sans','Noto Sans JP','Noto Sans','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-break:strict;word-break:normal;}
+  .wrap{max-width:760px;margin:0 auto;padding:18px 12px 28px}
+  .card{background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 8px 28px rgba(16,24,40,.08);overflow:hidden}
+  /* Hero with gradient ribbon */
+  .hero{position:relative;padding:18px 16px 16px;border-bottom:1px solid var(--bd);background:#fff}
+  .ribbon{position:absolute;left:0;right:0;top:0;height:90px;background:linear-gradient(90deg,var(--blue),var(--blue2));opacity:.10}
+  .brand{position:relative;display:flex;gap:12px;align-items:center}
+  .logo{width:44px;height:44px;border-radius:12px;object-fit:cover;border:1px solid #e6eefb}
+  h1{font-size:21px;margin:0}
+  .cele{margin-top:6px;display:flex;align-items:center;gap:8px}
+  .cele .spark{width:26px;height:26px;display:grid;place-items:center;border-radius:8px;background:#EEF5FF}
+  .cele .txt{font-size:13.5px;color:var(--sub)}
+  /* Sections */
+  .section{padding:16px}
+  .notice{display:flex;gap:10px;background:#F2F8FF;border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin:0 0 12px}
+  .dot{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
+  .msg{margin:0;font-size:14px;line-height:1.9}
+  .todo{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:10px;background:#fff}
+  .todo input[type=checkbox]{appearance:none;width:20px;height:20px;border:2px solid var(--blue);border-radius:6px;display:inline-grid;place-content:center;cursor:pointer}
+  .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:120ms transform ease-in-out;
+    background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:3px}
+  .todo input[type=checkbox]:checked::before{transform:scale(1)}
+  .mini{margin-left:auto;font-size:12.5px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:6px 8px;border-radius:999px;background:#fff}
+  .rows{display:grid;gap:10px;margin-top:12px}
+  .box{border:1px solid var(--bd);border-radius:14px;padding:12px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 16px 12px, rgba(11,92,171,.06), transparent 60%);background-clip:padding-box,border-box}
+  .box h3{margin:0 0 6px;font-size:15px}
+  .box ul{margin:6px 0 0 18px;padding:0;line-height:1.85}
+  .kicker{font-size:13px;color:var(--sub);margin:8px 0 0}
+  /* Accordions */
+  details{border:1px solid var(--bd);border-radius:12px;background:#fff}
+  summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:700;display:flex;align-items:center;gap:8px}
+  summary::-webkit-details-marker{display:none}
+  details>div{padding:0 14px 12px}
+  .badge{display:inline-block;padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+  /* Videos as cards with thumbs */
+  .video-list{display:grid;gap:10px}
+  .video{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:8px;background:#fff; text-decoration:none}
+  .video:hover{box-shadow:0 10px 24px rgba(11,92,171,.10); transform:translateY(-1px)}
+  .thumb{width:120px;height:68px;border-radius:8px;object-fit:cover;border:1px solid var(--bd);flex:0 0 auto}
+  .v-body h4{margin:0 0 4px;font-size:14px;color:var(--text)}
+  .v-body p{margin:0;color:var(--sub);font-size:12.5px;line-height:1.7}
+  /* Footer */
+  .footer{margin-top:12px;color:var(--sub);font-size:12.5px;padding:0 16px 16px}
+  .footer a{color:var(--blue);text-decoration:none}
+  /* CTA */
+  .cta{margin-top:12px}
+  .btn{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:700;font-size:13.5px}
+  .btn.primary{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;border-color:transparent}
+  /* Focus visible */
+  a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid rgba(11,92,171,.6);outline-offset:2px;border-radius:6px}
+  /* Desktop tweaks */
+  @media (min-width: 721px){
+    .wrap{padding:28px 16px 36px}
+    h1{font-size:22px}
+    .rows{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+</style>
 </head>
 <body>
-  <svg class="page-art" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="bgBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B5CAB"/><stop offset="100%" stop-color="#2F7FD6"/></linearGradient>
-      <linearGradient id="bgOrange" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFA86B"/><stop offset="100%" stop-color="#F0731E"/></linearGradient>
-      <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="#0B5CAB" opacity=".06"/><circle cx="18" cy="18" r="2" fill="#F0731E" opacity=".05"/></pattern>
-    </defs>
-    <rect width="1440" height="900" fill="url(#dots)"/>
-    <g opacity=".10"><path d="M-220 120 C 120 -40, 560 -40, 900 120" fill="none" stroke="url(#bgBlue)" stroke-width="22" stroke-linecap="round"/>
-      <path d="M-240 160 C 100 0, 560 0, 920 160" fill="none" stroke="url(#bgOrange)" stroke-width="12" stroke-linecap="round" opacity=".9"/></g>
-    <path d="M80 500 h120 l24 -44 l22 60 l24 -28 h160" fill="none" stroke="#0B5CAB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".10"/>
-    <g opacity=".10"><path d="M280 720 C 740 540, 1120 540, 1580 720" fill="none" stroke="url(#bgOrange)" stroke-width="20" stroke-linecap="round"/>
-      <path d="M320 760 C 780 580, 1160 580, 1600 760" fill="none" stroke="url(#bgBlue)" stroke-width="12" stroke-linecap="round" opacity=".9"/></g>
-  </svg>
-
-  <main class="wrap" aria-labelledby="page-title">
-    <article class="card" role="region" aria-label="予約完了のご案内">
-      <header class="hero">
-        <div class="brand">
-          <img src="https://share.google/images/zQSD5DBDohXzDo3gq" alt="OneSelF" class="logo" onerror="this.style.display='none'">
-          <div>
-            <h1 id="page-title" class="ttl">ご予約ありがとうございます</h1>
-            <p class="sub"><strong>初回体験（60分）</strong>のご予約が確定しました。<span class="pop">当日がもっと楽しみになる</span>ミニガイドをお届けします。</p>
-          </div>
+<main class="wrap" aria-labelledby="title">
+  <article class="card" role="region" aria-label="予約完了のご案内">
+    <header class="hero">
+      <div class="ribbon" aria-hidden="true"></div>
+      <div class="brand">
+        <img src="https://share.google/images/zQSD5DBDohXzDo3gq" alt="OneSelF" class="logo" onerror="this.style.display='none'">
+        <div>
+          <h1 id="title">ご予約ありがとうございます</h1>
+          <div class="cele"><span class="spark">🎉</span><span class="txt">初回体験（60分）が確定しました。来店前に以下だけチェックすればOKです。</span></div>
         </div>
-      </header>
-
-      <div class="body">
-        <section class="notice" aria-label="重要なお知らせ">
-          <div class="dot">i</div>
-          <p class="msg">このページは閉じていただいて構いません。<br>数分以内に確認メールをお送りします（届かない場合は迷惑メールをご確認ください）。</p>
-        </section>
-
-        <h2 class="section">来店前チェック（任意）</h2>
-        <ul class="todo" aria-label="来店までの確認リスト">
-          <li><label><input type="checkbox" class="td"> Googleマップで位置確認</label><a class="mini" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59" target="_blank" rel="noopener">開く</a></li>
-          <li><label><input type="checkbox" class="td"> 事前アンケートの回答</label><a class="mini" href="https://forms.gle/iko8PAXtw3XqJF299" target="_blank" rel="noopener">回答する</a></li>
-          <li><label><input type="checkbox" class="td"> 説明動画をみる</label><a class="mini" href="https://youtu.be/C4bKRnQmtmA" target="_blank" rel="noopener">見る</a></li>
-        </ul>
-        <p class="todo-done" id="todoDone">準備ばっちり！当日お会いできるのを楽しみにしています。</p>
-
-        <div class="cols">
-          <section class="box" aria-label="当日のご案内">
-            <h3>当日のご案内</h3>
-            <ul class="list">
-              <li>入室は<strong>ご予約の15分前</strong>から可能です。</li>
-              <li>遅れて来られた場合、内容を短縮させていただくことがあります。</li>
-              <li>住所：東京都三鷹市下連雀3-33-8 三鷹婦人会館藤ビル2F</li>
-            </ul>
-          </section>
-          <section class="box" aria-label="服装・持ち物">
-            <h3>服装・持ち物</h3>
-            <ul class="list">
-              <li>動きやすい服装（更衣室あり）</li>
-              <li><strong>室内シューズ</strong>（レンタルあり・500円）</li>
-              <li>飲料（ウォーターサーバーあり）</li>
-            </ul>
-          </section>
-        </div>
-
-        <section class="trust3" aria-label="OneSelFの特長">
-          <div class="trustcard">
-            <div class="trusticon" aria-hidden="true">🧑‍⚕️</div>
-            <div class="trustbody">
-              <h3 class="trustttl">01 専門性</h3>
-              <p class="trusttxt">理学療法士・アスレティックトレーナーなど<strong>公的専門資格者</strong>が担当。カラダを精密に分析し、パフォーマンスアップはもちろん、ケガや不調にも安心のアプローチ。</p>
-            </div>
-          </div>
-          <div class="trustcard">
-            <div class="trusticon" aria-hidden="true">🎯</div>
-            <div class="trustbody">
-              <h3 class="trustttl">02 個別最適性</h3>
-              <p class="trusttxt">毎セッションの緻密なチェックに基づく<strong>的確なプログラム</strong>で、最短ルートのパフォーマンス向上を実現。トップアスリートから初心者まで、“今のあなた”にフィット。</p>
-            </div>
-          </div>
-          <div class="trustcard">
-            <div class="trusticon" aria-hidden="true">🏡</div>
-            <div class="trustbody">
-              <h3 class="trustttl">03 日常性</h3>
-              <p class="trusttxt">スポーツ医科学のメソッドを<strong>日常に無理なく</strong>取り入れられる形でご提供。ジムで終わらせず、ご家庭や職場でも続けやすいフィードバックとエクササイズ。</p>
-            </div>
-          </div>
-        </section>
-
-        <h2 class="section">体験セッションの流れ（60分例）</h2>
-        <ol class="flow" aria-label="60分の進行例">
-          <li><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0B5CAB"/><path d="M7 12h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <p class="f-ttl">到着・受付 <span class="t">5分</span></p><p class="f-txt">更衣とご案内。落ち着いてスタートします。</p></li>
-          <li><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="3" fill="#FFA86B"/><path d="M7 12h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <p class="f-ttl">カウンセリング <span class="t">10分</span></p><p class="f-txt">目的・体調・既往歴を共有し、今日の方針を明確に。</p></li>
-          <li><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2F7FD6"/><path d="M6 14c3-6 9-6 12 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-            <p class="f-ttl">カラダチェック <span class="t">10分</span></p><p class="f-txt">姿勢・可動性・安定性をサクッと確認。</p></li>
-          <li><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18l3-8 3 4 3-8 3 12" stroke="#0B5CAB" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-            <p class="f-ttl">トレーニング <span class="t">30分</span></p><p class="f-txt">呼吸・モビリティを含めて負荷を微調整。楽しく前進。</p></li>
-          <li><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F0731E"/><path d="M8 12h8M8 15h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <p class="f-ttl">ふり返り <span class="t">5分</span></p><p class="f-txt">今日の収穫と次への一歩を共有します。</p></li>
-        </ol>
-        <p class="flow-note">※内容・配分は<span class="em">“今のあなた”</span>に合わせて柔軟に調整します。</p>
-
-        <div class="callout">自重トレーニング、身体操作エクササイズ、ヨガ、ピラティスなど、<strong>3000種類を超えるオリジナルトレーニング</strong>から、あなたのカラダに最適なプログラムにカスタマイズし、実施します。</div>
-
-        <h2 class="section">動画で見るトレーニング例</h2>
-        <p class="yt-note">目的別に4本をセレクト。体験セッションでも使う動きのイメージがつかめます（スマホでも見やすい短めの構成）。</p>
-        <div class="yt-grid" aria-label="YouTube で見る OneSelF のトレーニング例">
-          <div class="yt"><div class="yt-16x9"><iframe src="https://www.youtube.com/embed/LudeusCbb2U" title="トレーニング例 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <h3 class="yt-ttl">ウォームアップ｜呼吸×全身モビリティ</h3><p class="yt-cap">固まりがちな肩・股関節をゆるめ、姿勢がスッと整う準備運動。セッション前の“スイッチ入れ”にも。</p><ul class="yt-tags"><li>やさしめ</li><li>自重</li><li>姿勢づくり</li></ul></div>
-          <div class="yt"><div class="yt-16x9"><iframe src="https://www.youtube.com/embed/TF5HyyWvxqY" title="トレーニング例 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <h3 class="yt-ttl">体幹連動｜動けるベースづくり</h3><p class="yt-cap">足から体幹、腕までをつなぐ“全身で動く感覚”を育てます。メリハリ良く動いて汗ばむ心地よさ。</p><ul class="yt-tags"><li>中等度</li><li>全身連動</li><li>代謝UP</li></ul></div>
-          <div class="yt"><div class="yt-16x9"><iframe src="https://www.youtube.com/embed/Ju5O1wSf8ao" title="トレーニング例 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <h3 class="yt-ttl">柔軟×バランス｜ヨガ/ピラティス要素</h3><p class="yt-cap">呼吸に合わせて伸びる気持ちよさ。安定としなやかさを同時に引き上げ、体が軽くなる体感へ。</p><ul class="yt-tags"><li>やさしめ</li><li>柔軟性</li><li>呼吸</li></ul></div>
-          <div class="yt"><div class="yt-16x9"><iframe src="https://www.youtube.com/embed/PDLmepag5E0" title="トレーニング例 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <h3 class="yt-ttl">姿勢サポート｜肩・背中すっきり</h3><p class="yt-cap">猫背が気になる方に。背中の感覚を呼び戻し、胸がひらく軽さへ。デスクワークの合間にも取り入れやすい。</p><ul class="yt-tags"><li>やさしめ〜中等度</li><li>肩甲帯</li><li>在宅ワーク対策</li></ul></div>
-        </div>
-
-        <footer class="footer">
-          <a href="mailto:one.self.for.your.life@gmail.com">お問い合わせ：one.self.for.your.life@gmail.com</a>
-          <span>／</span>
-          <a href="https://www.one-self.net/" target="_blank" rel="noopener">トップページへ戻る</a>
-        </footer>
       </div>
-    </article>
-  </main>
+    </header>
 
-  <script>
-  // checklist 完了メッセージ制御
-  (function(){
-    var boxes=[].slice.call(document.querySelectorAll('.todo .td'));
-    var done=document.getElementById('todoDone');
-    function update(){
-      if(!boxes.length) return;
-      var all=boxes.every(function(b){return b.checked;});
-      if(all){ done && done.classList.add('show'); }
-      else { done && done.classList.remove('show'); }
-    }
-    boxes.forEach(function(b){ b.addEventListener('change', update); });
-    update();
-  })();
-  </script>
+    <section class="section">
+      <div class="notice">
+        <div class="dot">i</div>
+        <p class="msg">このページは閉じていただいて構いません。数分以内に確認メールをお送りします（届かない場合は迷惑メールをご確認ください）。</p>
+      </div>
+
+      <!-- 必要最小限のチェック -->
+      <ul class="todo" aria-label="来店前チェック">
+        <li><label><input type="checkbox" class="td"> Googleマップで位置確認</label><a class="mini" target="_blank" rel="noopener" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59">開く</a></li>
+        <li><label><input type="checkbox" class="td"> 事前アンケートの回答</label><a class="mini" target="_blank" rel="noopener" href="https://forms.gle/iko8PAXtw3XqJF299">回答する</a></li>
+        <li><label><input type="checkbox" class="td"> 説明動画の要点を見る</label><a class="mini" target="_blank" rel="noopener" href="#videos">下へ</a></li>
+      </ul>
+
+      <!-- 情報は2ブロック -->
+      <div class="rows">
+        <div class="box">
+          <h3>当日のご案内</h3>
+          <ul>
+            <li>入室は<strong>ご予約の15分前</strong>から可能です。</li>
+            <li>遅れて来られた場合、内容を短縮させていただくことがあります。</li>
+            <li>住所：東京都三鷹市下連雀3-33-8 三鷹婦人会館藤ビル2F</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>服装・持ち物</h3>
+          <ul>
+            <li>動きやすい服装（更衣室あり）</li>
+            <li><strong>室内シューズ</strong>（レンタルあり・500円）</li>
+            <li>飲料（ウォーターサーバーあり）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 60分の流れ：アコーディオンで短縮 -->
+      <details style="margin-top:10px">
+        <summary>体験の流れ（60分例）</summary>
+        <div>
+          <ul style="margin:8px 0 0 18px;line-height:1.9">
+            <li>到着・受付（5分）— 更衣とご案内。落ち着いてスタート。</li>
+            <li>カウンセリング（10分）— 目的・体調・既往歴の共有。</li>
+            <li>カラダチェック（10分）— 姿勢・可動性・安定性をサクッと確認。</li>
+            <li>トレーニング（30分）— 呼吸・モビリティを含め負荷を微調整。</li>
+            <li>ふり返り（5分）— 今日の収穫と次への一歩。</li>
+          </ul>
+          <p class="kicker">※内容・配分は<strong>“今のあなた”</strong>に合わせて柔軟に調整します。</p>
+        </div>
+      </details>
+
+      <!-- 特長：アコーディオン -->
+      <details style="margin-top:10px">
+        <summary>OneSelF の特長</summary>
+        <div>
+          <ul style="margin:8px 0 0 18px;line-height:1.9">
+            <li><b>専門性</b>：公的専門資格者が担当。ケガ・不調にも安心。</li>
+            <li><b>個別最適性</b>：毎回のチェックに基づく的確なプログラム。</li>
+            <li><b>日常性</b>：ご家庭や職場でも続けやすいフィードバック。</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 動画：3本（サムネリンク） -->
+      <details id="videos" style="margin-top:10px">
+        <summary>動画でイメージをつかむ（3本・各1分前後）</summary>
+        <div class="video-list" role="list">
+          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LudeusCbb2U" aria-label="ウォームアップ｜呼吸×全身モビリティ（YouTubeで開く）">
+            <img class="thumb" src="https://img.youtube.com/vi/LudeusCbb2U/mqdefault.jpg" alt="ウォームアップ | 呼吸×全身モビリティ">
+            <div class="v-body"><h4>ウォームアップ｜呼吸×全身モビリティ</h4><p>肩・股関節をゆるめて姿勢を整える準備運動。</p>
+              <div class="chips"><span class="badge">やさしめ</span><span class="badge">自重</span></div></div>
+          </a>
+          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=TF5HyyWvxqY" aria-label="体幹連動｜動けるベースづくり（YouTubeで開く）">
+            <img class="thumb" src="https://img.youtube.com/vi/TF5HyyWvxqY/mqdefault.jpg" alt="体幹連動｜動けるベースづくり">
+            <div class="v-body"><h4>体幹連動｜動けるベースづくり</h4><p>全身で動く感覚を育て、メリハリ良く動く。</p>
+              <div class="chips"><span class="badge">中等度</span><span class="badge">全身連動</span></div></div>
+          </a>
+          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PDLmepag5E0" aria-label="姿勢サポート｜肩・背中すっきり（YouTubeで開く）">
+            <img class="thumb" src="https://img.youtube.com/vi/PDLmepag5E0/mqdefault.jpg" alt="姿勢サポート｜肩・背中すっきり">
+            <div class="v-body"><h4>姿勢サポート｜肩・背中すっきり</h4><p>背中の感覚を呼び戻し、胸がひらく軽さへ。</p>
+              <div class="chips"><span class="badge">やさしめ</span><span class="badge">肩甲帯</span></div></div>
+          </a>
+        </div>
+      </details>
+
+      <div class="cta">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.one-self.net/">トップページへ戻る</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="mailto:one.self.for.your.life@gmail.com">お問い合わせ：one.self.for.your.life@gmail.com</a>
+    </footer>
+  </article>
+</main>
+
+<script>
+// checklist listener (reserved for future small reactions)
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('.todo .td'));
+  boxes.forEach(function(b){ b.addEventListener('change', function(){}); });
+})();
+</script>
+
+<!-- CV計測（SimplyBook経由の1回だけ発火） -->
+<script>
+(function(){
+  var ref=(document.referrer||"").toLowerCase();
+  if(!ref.includes("simplybook")) return;
+  if(sessionStorage.getItem("sb_cv_fired")) return;
+  sessionStorage.setItem("sb_cv_fired","1");
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:"booking_success", provider:"simplybook"});
+})();
+</script>
 </body>
 </html>

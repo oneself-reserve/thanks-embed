@@ -7,22 +7,13 @@
 <meta name="description" content="OneSelF 三鷹の初回体験のご予約が確定しました。来店前のミニガイドをご確認ください。">
 <meta name="robots" content="noindex, nofollow">
 <style>
-  :root{
-    --blue:#0B5CAB; --blue2:#2F7FD6; --orange:#F0731E; --orange2:#FFA86B;
-    --bg:#F7FAFF; --card:#fff; --text:#111827; --sub:#4B5563; --bd:#E5E7EB; --ok:#18B663;
-    --ring: rgba(11,92,171,.18);
-  }
+  :root{--blue:#0B5CAB;--blue2:#2F7FD6;--orange:#F0731E;--orange2:#FFA86B;--bg:#F7FAFF;--card:#fff;--text:#111827;--sub:#4B5563;--bd:#E5E7EB;--ok:#18B663;--ring:rgba(11,92,171,.18)}
   *{box-sizing:border-box}
   html,body{height:100%}
   body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,rgba(11,92,171,.08),transparent 60%),radial-gradient(1200px 600px at 110% -10%,rgba(240,115,30,.08),transparent 60%),var(--bg);color:var(--text);
        font-family:'Hiragino Sans','Noto Sans JP','Noto Sans','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
        -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-break:strict;word-break:normal;}
   .wrap{max-width:780px;margin:0 auto;padding:22px 12px 36px;position:relative}
-  .orb{position:absolute;filter:blur(24px);opacity:.35;pointer-events:none}
-  .orb.b1{width:140px;height:140px;border-radius:50%;background:linear-gradient(180deg,var(--blue2),transparent);left:-40px;top:80px;animation:float 9s ease-in-out infinite alternate}
-  .orb.b2{width:160px;height:160px;border-radius:50%;background:linear-gradient(180deg,var(--orange2),transparent);right:-40px;top:140px;animation:float 10s ease-in-out infinite alternate-reverse}
-  @keyframes float{from{transform:translateY(0)}to{transform:translateY(14px)}}
-
   .card{background:var(--card);border:1px solid var(--bd);border-radius:20px;box-shadow:0 18px 36px rgba(16,24,40,.10);overflow:hidden;position:relative}
   .hero{position:relative;padding:22px 16px 16px;border-bottom:1px solid var(--bd);background:#fff;overflow:hidden}
   .band{position:absolute;left:-10%;right:-10%;top:-50px;height:130px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:skewY(-6deg);opacity:.18}
@@ -32,32 +23,20 @@
   .cele{margin-top:8px;display:flex;align-items:center;gap:8px}
   .cele .spark{width:28px;height:28px;display:grid;place-items:center;border-radius:10px;background:#EEF5FF}
   .cele .txt{font-size:14px;color:var(--sub)}
-  .art{position:absolute;right:-6px;top:-4px;width:220px;height:auto;opacity:.95;z-index:0}
-  @media (min-width:721px){ .art{right:8px;top:-6px;width:260px} }
-  .brand, .cele {position:relative;z-index:1}
-  .blink{animation:blink 3.5s infinite}
-  @keyframes blink{0%,92%,100%{opacity:1}93%,97%{opacity:0}}
-  .breath{animation:breath 4s ease-in-out infinite}
-  @keyframes breath{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-
   .section{padding:16px}
   .notice{display:flex;gap:10px;background:#F2F8FF;border:1px solid var(--bd);border-radius:14px;padding:12px;margin:0 0 12px}
   .dot{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
   .msg{margin:0;font-size:14.5px;line-height:1.95}
-
   .todo{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
   .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:14px;padding:12px;background:#fff}
   .todo input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid var(--blue);border-radius:7px;display:inline-grid;place-content:center;cursor:pointer}
-  .todo input[type=checkbox]:before{content:'';width:12px;height:12px;transform:scale(0);transition:150ms transform ease-in-out;
-    background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:3px}
+  .todo input[type=checkbox]:before{content:'';width:12px;height:12px;transform:scale(0);transition:150ms transform ease-in-out;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:3px}
   .todo input[type=checkbox]:checked:before{transform:scale(1)}
   .mini{margin-left:auto;font-size:13px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:7px 10px;border-radius:999px;background:#fff}
-
   .rows{display:grid;gap:12px;margin-top:12px}
   .box{border:1px solid var(--bd);border-radius:16px;padding:14px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 16px 12px, rgba(11,92,171,.06), transparent 60%);background-clip:padding-box,border-box}
   .box h3{margin:0 0 6px;font-size:15.5px}
   .box ul{margin:6px 0 0 18px;padding:0;line-height:1.9}
-
   details{border:1px solid var(--bd);border-radius:16px;background:#fff;overflow:hidden;transition:box-shadow .2s ease}
   details:hover{box-shadow:0 10px 24px rgba(11,92,171,.10)}
   summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:800}
@@ -65,7 +44,6 @@
   summary .label{flex:1}
   details[open] .caret{transform:rotate(90deg)}
   details>div{padding:0 16px 14px}
-
   .video-list{display:grid;gap:10px}
   .video{display:flex;align-items:center;gap:12px;border:1px solid var(--bd);border-radius:14px;padding:10px;background:#fff; text-decoration:none}
   .video:hover{box-shadow:0 10px 24px rgba(11,92,171,.10); transform:translateY(-1px)}
@@ -74,57 +52,21 @@
   .v-body p{margin:0;color:var(--sub);font-size:13px;line-height:1.7}
   .badge{display:inline-block;padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
-
   .cta{margin-top:14px}
   .btn{display:inline-block;padding:12px 16px;border-radius:999px;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:800;font-size:14px}
   .btn.primary{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(11,92,171,.18)}
   .btn.primary:hover{transform:translateY(-1px)}
-
   .footer{margin-top:14px;color:var(--sub);font-size:12.5px;padding:0 16px 18px}
   .footer a{color:var(--blue);text-decoration:none}
-
   a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:8px}
-
-  @media (min-width: 721px){
-    .wrap{padding:28px 16px 40px}
-    h1{font-size:24px}
-    .rows{grid-template-columns:repeat(2,minmax(0,1fr))}
-  }
+  @media (min-width:721px){.wrap{padding:28px 16px 40px}h1{font-size:24px}.rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
 <main class="wrap" aria-labelledby="title">
-  <i class="orb b1" aria-hidden="true"></i>
-  <i class="orb b2" aria-hidden="true"></i>
-
-  <article class="card" role="region" aria-label="予約完了のご案内">
+  <article class="card">
     <header class="hero">
       <div class="band" aria-hidden="true"></div>
-      <svg class="art" viewBox="0 0 320 220" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B5CAB"/><stop offset="1" stop-color="#2F7FD6"/></linearGradient>
-          <linearGradient id="gO" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFA86B"/><stop offset="1" stop-color="#F0731E"/></linearGradient>
-          <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
-        </defs>
-        <rect x="60" y="170" width="200" height="16" rx="8" fill="url(#gB)" opacity=".25" filter="url(#soft)"/>
-        <g transform="translate(120,80)">
-          <circle cx="0" cy="-18" r="10" fill="#fff" stroke="url(#gB)" stroke-width="3" class="blink"/>
-          <path d="M-10 -6 h20 v28 h-20z" fill="url(#gB)" opacity=".9" class="breath"/>
-          <path d="M-10 22 l-16 22" stroke="url(#gB)" stroke-width="6" stroke-linecap="round"/>
-          <path d="M10 22 l16 10" stroke="url(#gB)" stroke-width="6" stroke-linecap="round"/>
-        </g>
-        <g transform="translate(190,88)">
-          <circle cx="0" cy="-16" r="9" fill="#fff" stroke="url(#gO)" stroke-width="3"/>
-          <path d="M-8 -4 h16 v24 h-16z" fill="url(#gO)" opacity=".95"/>
-          <path d="M-8 20 l-14 18" stroke="url(#gO)" stroke-width="6" stroke-linecap="round"/>
-          <path d="M8 20 l18 -6" stroke="url(#gO)" stroke-width="6" stroke-linecap="round"/>
-        </g>
-        <g fill="#fff" opacity=".9">
-          <path d="M280 40l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8z"/>
-          <path d="M210 26l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" opacity=".85"/>
-        </g>
-      </svg>
-
       <div class="brand">
         <img src="https://share.google/images/zQSD5DBDohXzDo3gq" alt="OneSelF" class="logo" onerror="this.style.display='none'">
         <div>
@@ -135,11 +77,7 @@
     </header>
 
     <section class="section">
-      <div class="notice">
-        <div class="dot">i</div>
-        <p class="msg">このページは閉じていただいて構いません。数分以内に確認メールをお送りします（届かない場合は迷惑メールをご確認ください）。</p>
-      </div>
-
+      <div class="notice"><div class="dot">i</div><p class="msg">このページは閉じていただいて構いません。数分以内に確認メールをお送りします（届かない場合は迷惑メールをご確認ください）。</p></div>
       <ul class="todo" aria-label="来店前チェック">
         <li><label><input type="checkbox" class="td"> Googleマップで位置確認</label><a class="mini" target="_blank" rel="noopener" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59">開く</a></li>
         <li><label><input type="checkbox" class="td"> 事前アンケートの回答</label><a class="mini" target="_blank" rel="noopener" href="https://forms.gle/iko8PAXtw3XqJF299">回答する</a></li>
@@ -147,81 +85,69 @@
       </ul>
 
       <div class="rows">
-        <div class="box">
-          <h3>当日のご案内</h3>
-          <ul>
-            <li>入室は<strong>ご予約の15分前</strong>から可能です。</li>
-            <li>遅れて来られた場合、内容を短縮させていただくことがあります。</li>
-            <li>住所：東京都三鷹市下連雀3-33-8 三鷹婦人会館藤ビル2F</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>服装・持ち物</h3>
-          <ul>
-            <li>動きやすい服装（更衣室あり）</li>
-            <li><strong>室内シューズ</strong>（レンタルあり・500円）</li>
-            <li>飲料（ウォーターサーバーあり）</li>
-          </ul>
-        </div>
+        <div class="box"><h3>当日のご案内</h3><ul><li>入室は<strong>ご予約の15分前</strong>から可能です。</li><li>遅れて来られた場合、内容を短縮させていただくことがあります。</li><li>住所：東京都三鷹市下連雀3-33-8 三鷹婦人会館藤ビル2F</li></ul></div>
+        <div class="box"><h3>服装・持ち物</h3><ul><li>動きやすい服装（更衣室あり）</li><li><strong>室内シューズ</strong>（レンタルあり・500円）</li><li>飲料（ウォーターサーバーあり）</li></ul></div>
       </div>
 
       <details style="margin-top:12px">
         <summary><span class="caret">›</span><span class="label">体験の流れ</span></summary>
-        <div>
-          <ul style="margin:8px 0 0 18px;line-height:1.9">
-            <li>到着・受付 — 更衣とご案内。落ち着いてスタート。</li>
-            <li>カウンセリング — 目的・体調・既往歴の共有。</li>
-            <li>カラダチェック — 姿勢・可動性・安定性をサクッと確認。</li>
-            <li>トレーニング — 呼吸・モビリティを含め負荷を微調整。</li>
-            <li>ふり返り — 今日の収穫と次への一歩。</li>
-          </ul>
-          <p class="kicker">※内容・配分は<strong>“今のあなた”</strong>に合わせて柔軟に調整します。</p>
-        </div>
-      </details>
-
-      <details style="margin-top:10px">
-        <summary><span class="caret">›</span><span class="label">OneSelF の特長</span></summary>
-        <div>
-          <ul style="margin:8px 0 0 18px;line-height:1.9">
-            <li><b>専門性</b>：公的専門資格者が担当。ケガ・不調にも安心。</li>
-            <li><b>個別最適性</b>：毎回のチェックに基づく的確なプログラム。</li>
-            <li><b>日常性</b>：ご家庭や職場でも続けやすいフィードバック。</li>
-          </ul>
-        </div>
+        <div><ul style="margin:8px 0 0 18px;line-height:1.9">
+          <li>到着・受付 — 更衣とご案内。落ち着いてスタート。</li>
+          <li>カウンセリング — 目的・体調・既往歴の共有。</li>
+          <li>カラダチェック — 姿勢・可動性・安定性をサクッと確認。</li>
+          <li>トレーニング — 呼吸・モビリティを含め負荷を微調整。</li>
+          <li>ふり返り — 今日の収穫と次への一歩。</li>
+        </ul></div>
       </details>
 
       <details id="videos" style="margin-top:10px">
         <summary><span class="caret">›</span><span class="label">動画でイメージをつかむ</span></summary>
-        <div class="video-list" role="list">
-          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LudeusCbb2U" aria-label="ウォームアップ｜呼吸×全身モビリティ（YouTubeで開く）">
+        <div class="video-list">
+          <a class="video" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LudeusCbb2U">
             <img class="thumb" src="https://img.youtube.com/vi/LudeusCbb2U/mqdefault.jpg" alt="ウォームアップ | 呼吸×全身モビリティ">
-            <div class="v-body"><h4>ウォームアップ｜呼吸×全身モビリティ</h4><p>肩・股関節をゆるめて姿勢を整える準備運動。</p>
-              <div class="chips"><span class="badge">やさしめ</span><span class="badge">自重</span></div></div>
+            <div class="v-body"><h4>ウォームアップ｜呼吸×全身モビリティ</h4><p>肩・股関節をゆるめて姿勢を整える準備運動。</p><div class="chips"><span class="badge">やさしめ</span><span class="badge">自重</span></div></div>
           </a>
-          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=TF5HyyWvxqY" aria-label="体幹連動｜動けるベースづくり（YouTubeで開く）">
+          <a class="video" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=TF5HyyWvxqY">
             <img class="thumb" src="https://img.youtube.com/vi/TF5HyyWvxqY/mqdefault.jpg" alt="体幹連動｜動けるベースづくり">
-            <div class="v-body"><h4>体幹連動｜動けるベースづくり</h4><p>全身で動く感覚を育て、メリハリ良く動く。</p>
-              <div class="chips"><span class="badge">中等度</span><span class="badge">全身連動</span></div></div>
+            <div class="v-body"><h4>体幹連動｜動けるベースづくり</h4><p>全身で動く感覚を育て、メリハリ良く動く。</p><div class="chips"><span class="badge">中等度</span><span class="badge">全身連動</span></div></div>
           </a>
-          <a class="video" role="listitem" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PDLmepag5E0" aria-label="姿勢サポート｜肩・背中すっきり（YouTubeで開く）">
+          <a class="video" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PDLmepag5E0">
             <img class="thumb" src="https://img.youtube.com/vi/PDLmepag5E0/mqdefault.jpg" alt="姿勢サポート｜肩・背中すっきり">
-            <div class="v-body"><h4>姿勢サポート｜肩・背中すっきり</h4><p>背中の感覚を呼び戻し、胸がひらく軽さへ。</p>
-              <div class="chips"><span class="badge">やさしめ</span><span class="badge">肩甲帯</span></div></div>
+            <div class="v-body"><h4>姿勢サポート｜肩・背中すっきり</h4><p>背中の感覚を呼び戻し、胸がひらく軽さへ。</p><div class="chips"><span class="badge">やさしめ</span><span class="badge">肩甲帯</span></div></div>
           </a>
         </div>
       </details>
 
-      <div class="cta">
-        <a class="btn primary" target="_blank" rel="noopener" href="https://www.one-self.net/">トップページへ戻る</a>
-      </div>
+      <div class="cta"><a class="btn primary" target="_blank" rel="noopener" href="https://www.one-self.net/">トップページへ戻る</a></div>
     </section>
 
-    <footer class="footer">
-      <a href="mailto:one.self.for.your.life@gmail.com">お問い合わせ：one.self.for.your.life@gmail.com</a>
-    </footer>
+    <footer class="footer"><a href="mailto:one.self.for.your.life@gmail.com">お問い合わせ：one.self.for.your.life@gmail.com</a></footer>
   </article>
 </main>
 
+<!-- postMessage: report height to parent for auto-resize -->
+<script>
+(function(){
+  var ID = "oneself-thanks-embed";
+  function getHeight(){
+    var b = document.body, e = document.documentElement;
+    return Math.max(b.scrollHeight, e.scrollHeight, b.offsetHeight, e.offsetHeight);
+  }
+  function send(){
+    var h = getHeight();
+    try{ parent.postMessage({type:"resize-embed", id:ID, height:h}, "*"); }catch(_){}
+  }
+  window.addEventListener("load", function(){ send(); setTimeout(send, 100); setTimeout(send, 500); });
+  window.addEventListener("resize", function(){ requestAnimationFrame(send); });
+  var obs = new MutationObserver(function(){ requestAnimationFrame(send); });
+  obs.observe(document.body, {subtree:true, childList:true, attributes:true, characterData:true});
+  document.querySelectorAll("details").forEach(function(d){ d.addEventListener("toggle", send); });
+  window.addEventListener("message", function(e){ if(e && e.data && e.data.type==="measure"){ send(); }}, false);
+  setInterval(send, 2000);
+})();
+</script>
+
+<!-- CV measurement (1-time fire for SimplyBook referrer) -->
 <script>
 (function(){
   var ref=(document.referrer||"").toLowerCase();

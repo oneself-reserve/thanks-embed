@@ -23,37 +23,50 @@
     font-family:'Hiragino Sans','Noto Sans JP','Noto Sans','Yu Gothic UI','YuGothic','Meiryo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-break:strict;word-break:normal;
   }
-  .wrap{max-width:780px;margin:0 auto;padding:22px 12px 36px;position:relative}
+  /* === Mobile readability tweaks === */
+  p, li{line-height:1.98; letter-spacing:.01em}
+  .wrap{max-width:780px;margin:0 auto;padding:22px 12px 40px;position:relative}
   .card{background:var(--card);border:1px solid var(--bd);border-radius:20px;box-shadow:0 18px 36px rgba(16,24,40,.10);overflow:hidden;position:relative}
-  .hero{position:relative;padding:22px 16px 16px;border-bottom:1px solid var(--bd);background:#fff;overflow:hidden}
+  .hero{position:relative;padding:22px 14px 14px;border-bottom:1px solid var(--bd);background:#fff;overflow:hidden}
   .band{position:absolute;left:-10%;right:-10%;top:-50px;height:130px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:skewY(-6deg);opacity:.18}
   .brand{position:relative;display:flex;gap:12px;align-items:center}
   .logo{width:48px;height:48px;border-radius:12px;object-fit:cover;border:1px solid #e6eefb;box-shadow:0 6px 18px rgba(11,92,171,.12)}
-  h1{font-size:22px;margin:0}
+  h1{font-size:22px;line-height:1.35;margin:0;text-wrap:balance}
   .cele{margin-top:8px;display:flex;align-items:center;gap:8px}
   .cele .spark{width:28px;height:28px;display:grid;place-items:center;border-radius:10px;background:#EEF5FF}
   .cele .txt{font-size:14px;color:var(--sub)}
-  .section{padding:16px}
-  .notice{display:flex;gap:10px;background:#F2F8FF;border:1px solid var(--bd);border-radius:14px;padding:12px;margin:0 0 12px}
+  .section{padding:14px}
+  .notice{display:flex;gap:10px;background:#F2F8FF;border:1px solid var(--bd);border-radius:14px;padding:12px;margin:2px 0 12px}
   .dot{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--ok);color:#fff;font-weight:700}
-  .msg{margin:0;font-size:14.5px;line-height:1.95}
+  .msg{margin:0;font-size:15px}
 
+  /* checklist */
   .todo{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
-  .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:14px;padding:12px;background:#fff}
-  .todo input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid var(--blue);border-radius:7px;display:inline-grid;place-content:center;cursor:pointer}
+  .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:16px;padding:12px;background:#fff}
+  .todo input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid var(--blue);border-radius:7px;display:inline-grid;place-content:center;cursor:pointer;flex:0 0 auto}
   .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:150ms transform ease-in-out;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:3px}
   .todo input[type=checkbox]:checked::before{transform:scale(1)}
   .mini{margin-left:auto;font-size:13px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:7px 10px;border-radius:999px;background:#fff;transition:transform .12s ease, box-shadow .12s ease}
   .mini:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(11,92,171,.14)}
 
-  /* icon chips */
-  .todo label{display:flex;align-items:center;gap:6px;flex:1 1 auto}
-  .todo .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#EEF5FF;font-size:14px;margin:0 6px 0 6px}
+  /* icon chips & two-line Japanese labels */
+  .todo label{display:flex;align-items:flex-start;gap:8px;flex:1 1 auto}
+  .todo .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#EEF5FF;font-size:14px;margin:0 4px 0 2px;flex:0 0 auto}
+  .lbl{display:flex;flex-wrap:wrap;gap:4px 6px}
+  .lbl b{font-weight:800}
+  .lbl .sep{opacity:.5}
+  .lbl .sub{color:var(--sub)}
+  @media (max-width:430px){
+    .mini{font-size:12.5px;padding:6px 10px}
+    .lbl .sep{display:none}
+    .lbl .sub{display:block;width:100%} /* 2行に分けて読みやすく */
+  }
 
   .rows{display:grid;gap:12px;margin-top:12px}
   .box{border:1px solid var(--bd);border-radius:16px;padding:14px;background:linear-gradient(0deg,#fff,#fff), radial-gradient(18px 18px at 16px 12px, rgba(11,92,171,.06), transparent 60%);background-clip:padding-box,border-box}
-  .box h3{margin:0 0 6px;font-size:15.5px}
-  .box ul{margin:6px 0 0 18px;padding:0;line-height:1.9}
+  .box h3{margin:0 0 6px;font-size:16px}
+  .box ul{margin:6px 0 0 18px;padding:0;line-height:1.95}
+  .box li{margin:6px 0}
 
   details{border:1px solid var(--bd);border-radius:16px;background:#fff;overflow:hidden;transition:box-shadow .2s ease}
   details:hover{box-shadow:0 10px 24px rgba(11,92,171,.10)}
@@ -66,9 +79,9 @@
   .video-list{display:grid;gap:10px}
   .video{display:flex;align-items:center;gap:12px;border:1px solid var(--bd);border-radius:14px;padding:10px;background:#fff;text-decoration:none;transition:transform .12s ease, box-shadow .12s ease}
   .video:hover{box-shadow:0 10px 24px rgba(11,92,171,.10);transform:translateY(-1px)}
-  .thumb{width:128px;height:72px;border-radius:10px;object-fit:cover;border:1px solid var(--bd);flex:0 0 auto}
+  .thumb{width:120px;height:68px;border-radius:10px;object-fit:cover;border:1px solid var(--bd);flex:0 0 auto}
   .v-body h4{margin:0 0 4px;font-size:15px;color:var(--text)}
-  .v-body p{margin:0;color:var(--sub);font-size:13px;line-height:1.7}
+  .v-body p{margin:0;color:var(--sub);font-size:13px;line-height:1.8}
   .badge{display:inline-block;padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;color:var(--sub);background:#fff}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
 
@@ -81,12 +94,6 @@
   .footer a{color:var(--blue);text-decoration:none}
 
   a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:8px}
-
-  @media (min-width:721px){
-    .wrap{padding:28px 16px 40px}
-    h1{font-size:24px}
-    .rows{grid-template-columns:repeat(2,minmax(0,1fr))}
-  }
 </style>
 </head>
 <body>
@@ -108,15 +115,27 @@
 
       <ul class="todo" aria-label="来店前チェック">
         <li>
-          <label><input type="checkbox" class="td"><span class="ic" aria-hidden="true">🗺️</span><span class="lbl">迷わず到着｜Googleマップで位置を確認</span></label>
+          <label>
+            <input type="checkbox" class="td">
+            <span class="ic" aria-hidden="true">🗺️</span>
+            <span class="lbl"><b>迷わず到着</b><span class="sep">｜</span><span class="sub">Googleマップで位置を確認</span></span>
+          </label>
           <a class="mini" target="_blank" rel="noopener" href="https://goo.gl/maps/fyCcGWkvSeFzPyQ59">地図をひらく</a>
         </li>
         <li>
-          <label><input type="checkbox" class="td"><span class="ic" aria-hidden="true">📝</span><span class="lbl">当日のご案内がスムーズ｜事前アンケートに回答</span></label>
+          <label>
+            <input type="checkbox" class="td">
+            <span class="ic" aria-hidden="true">📝</span>
+            <span class="lbl"><b>当日のご案内がスムーズ</b><span class="sep">｜</span><span class="sub">事前アンケートに回答</span></span>
+          </label>
           <a class="mini" target="_blank" rel="noopener" href="https://forms.gle/iko8PAXtw3XqJF299">1分で回答</a>
         </li>
         <li>
-          <label><input type="checkbox" class="td"><span class="ic" aria-hidden="true">🎬</span><span class="lbl">体験の流れがすぐ分かる｜説明動画の要点を見る</span></label>
+          <label>
+            <input type="checkbox" class="td">
+            <span class="ic" aria-hidden="true">🎬</span>
+            <span class="lbl"><b>体験の流れがすぐ分かる</b><span class="sep">｜</span><span class="sub">説明動画の要点を見る</span></span>
+          </label>
           <a class="mini" target="_blank" rel="noopener" href="https://youtu.be/C4bKRnQmtmA">今すぐ見る</a>
         </li>
       </ul>
@@ -140,7 +159,7 @@
 
       <details style="margin-top:12px">
         <summary><span class="caret">›</span><span class="label">体験の流れ</span></summary>
-        <div><ul style="margin:8px 0 0 18px;line-height:1.9">
+        <div><ul style="margin:8px 0 0 18px;line-height:1.95">
           <li>到着・受付 — 更衣とご案内。落ち着いてスタート。</li>
           <li>カウンセリング — 目的・体調・既往歴の共有。</li>
           <li>カラダチェック — 姿勢・可動性・安定性をサクッと確認。</li>

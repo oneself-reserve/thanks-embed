@@ -42,12 +42,12 @@
 
   /* checklist */
   .todo{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
-  .todo li{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:16px;padding:12px;background:#fff}
+  .todo li{display:flex;align-items:center;gap:12px;border:1px solid var(--bd);border-radius:16px;padding:12px;background:#fff}
   .todo input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid var(--blue);border-radius:7px;display:inline-grid;place-content:center;cursor:pointer;flex:0 0 auto}
   .todo input[type=checkbox]::before{content:'';width:12px;height:12px;transform:scale(0);transition:150ms transform ease-in-out;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:3px}
   .todo input[type=checkbox]:checked::before{transform:scale(1)}
-  .mini{margin-left:auto;font-size:13px;color:var(--blue);text-decoration:none;border:1px solid var(--bd);padding:7px 10px;border-radius:999px;background:#fff;transition:transform .12s ease, box-shadow .12s ease}
-  .mini:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(11,92,171,.14)}
+  .mini{margin-left:auto;font-size:14px;color:#fff;text-decoration:none;border:1px solid transparent;padding:10px 14px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--blue2));white-space:nowrap;box-shadow:0 6px 16px rgba(11,92,171,.18);transition:transform .12s ease, box-shadow .12s ease}
+  .mini:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(11,92,171,.24)}
 
   /* icon chips & two-line Japanese labels */
   .todo label{display:flex;align-items:flex-start;gap:8px;flex:1 1 auto}
@@ -128,7 +128,7 @@
             <span class="ic" aria-hidden="true">📝</span>
             <span class="lbl"><b>当日のご案内がスムーズ</b><span class="sep">｜</span><span class="sub">事前アンケートに回答</span></span>
           </label>
-          <a class="mini" target="_blank" rel="noopener" href="https://forms.gle/iko8PAXtw3XqJF299">1分で回答</a>
+          <a class="mini" target="_blank" rel="noopener" href="https://forms.gle/iko8PAXtw3XqJF299">回答する</a>
         </li>
         <li>
           <label>
@@ -136,7 +136,7 @@
             <span class="ic" aria-hidden="true">🎬</span>
             <span class="lbl"><b>体験の流れがすぐ分かる</b><span class="sep">｜</span><span class="sub">説明動画の要点を見る</span></span>
           </label>
-          <a class="mini" target="_blank" rel="noopener" href="https://youtu.be/C4bKRnQmtmA">今すぐ見る</a>
+          <a class="mini" target="_blank" rel="noopener" href="https://youtu.be/C4bKRnQmtmA">動画をみる</a>
         </li>
       </ul>
 

@@ -194,27 +194,93 @@
   </article>
 </main>
 
-<!-- Auto-resize: child posts height to parent -->
+
+<!-- Auto-resize: robust child -> parent height sync -->
 <script>
 (function(){
   var ID = "oneself-thanks-embed";
-  function getHeight(){
+
+  // --- helpers ---
+  function docHeight(){
     var b = document.body, e = document.documentElement;
-    return Math.max(b.scrollHeight, e.scrollHeight, b.offsetHeight, e.offsetHeight);
+    return Math.max(
+      b.scrollHeight, e.scrollHeight,
+      b.offsetHeight, e.offsetHeight,
+      b.clientHeight, e.clientHeight
+    );
   }
-  function send(){
-    var h = getHeight();
+
+  var lastH = 0, ticking = false;
+  function post(h){
     try{ parent.postMessage({type:"resize-embed", id:ID, height:h}, "*"); }catch(_){}
   }
-  window.addEventListener("load", function(){ send(); setTimeout(send, 100); setTimeout(send, 500); });
-  window.addEventListener("resize", function(){ requestAnimationFrame(send); });
-  var obs = new MutationObserver(function(){ requestAnimationFrame(send); });
-  obs.observe(document.body, {subtree:true, childList:true, attributes:true, characterData:true});
-  document.querySelectorAll("details").forEach(function(d){ d.addEventListener("toggle", send); });
-  window.addEventListener("message", function(e){ if(e && e.data && e.data.type==="measure"){ send(); }}, false);
-  setInterval(send, 2000);
+  function measure(force){
+    if(ticking && !force) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var h = docHeight();
+      if(force || Math.abs(h - lastH) > 2){
+        lastH = h;
+        post(h);
+      }
+      ticking = false;
+    });
+  }
+
+  // --- burst sender to absorb delayed layout/animation ---
+  function burst(){
+    [0,60,120,240,480,800,1200,2000].forEach(function(ms){ setTimeout(function(){ measure(true); }, ms); });
+  }
+
+  // Observe size changes of body & root
+  try{
+    var ro = new ResizeObserver(function(){ measure(); });
+    ro.observe(document.documentElement);
+    ro.observe(document.body);
+  }catch(_){
+    // Fallback for older browsers: keep a small poll
+    setInterval(function(){ measure(); }, 500);
+  }
+
+  // Observe DOM mutations (content toggles / images injected など)
+  var mo = new MutationObserver(function(){ measure(); });
+  mo.observe(document.body, {subtree:true, childList:true, attributes:true, characterData:true});
+
+  // details の開閉はバースト送信
+  document.querySelectorAll("details").forEach(function(d){
+    d.addEventListener("toggle", burst);
+  });
+
+  // 画像・iframe 読み込み後も高さ変化を拾う
+  function hookMedia(){
+    var nodes = Array.prototype.slice.call(document.querySelectorAll("img,iframe"));
+    nodes.forEach(function(el){
+      if(el.dataset.__roHooked) return;
+      el.dataset.__roHooked = "1";
+      el.addEventListener("load", burst, {once:false});
+    });
+  }
+  hookMedia();
+  // 後から追加されたメディアにもフック
+  setInterval(hookMedia, 1500);
+
+  // 初期 & スクロール/リサイズ時
+  window.addEventListener("load", burst);
+  window.addEventListener("resize", measure);
+  window.addEventListener("orientationchange", burst);
+  window.addEventListener("transitionend", measure, true);
+  window.addEventListener("animationend", measure, true);
+
+  // 親からの明示リクエストに応答
+  window.addEventListener("message", function(e){
+    if(e && e.data && e.data.type === "measure"){ burst(); }
+  }, false);
+
+  // 最終保険：一定間隔でも軽く通知
+  setInterval(function(){ measure(); }, 2000);
 })();
 </script>
+
 
 <!-- CV measurement: fire once only when coming from SimplyBook -->
 <script>
